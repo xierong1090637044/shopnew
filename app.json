@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/personcenter/personcenter",
+    "pages/order_car/order_car",
+    "pages/detail/detail",
+    "pages/choseaddress/choseaddress",
+    "pages/addaddress/addaddress",
+    "pages/about_us/about_us",
+    "pages/contact_us/contact_us"
+  ],
+  "window": {
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/personcenter/personcenter",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine1.png",
+        "text": "个人中心"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order_car/order_car",
+        "iconPath": "images/shopcar.png",
+        "selectedIconPath": "images/shopcar1.png",
+        "text": "购物车"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
