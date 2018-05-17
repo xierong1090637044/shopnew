@@ -18,7 +18,7 @@
 <view style='padding:13px;padding-top:13px;float:left;width:90%'>
   <view class='float'>
     <view class='text'>维维</view>
-    <view style='float:left;line-height:40px;margin-left:10%'>{{payContent.type}}</view>
+    <view style='float:left;line-height:40px;margin-left:8%'>{{payContent.type}}</view>
     <text style='float:right;line-height:40px;margin-left:10%;font-size:16px;color:#f38900'>热度：{{redu}}</text>
   </view>
 </view>

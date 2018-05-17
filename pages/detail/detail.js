@@ -63,54 +63,53 @@ Page({
      });
 
      //查询点赞状态
-     var Diary = Bmob.Object.extend("dianzan");
-     var query = new Bmob.Query(Diary);
-     var state1 = '';
-     query.equalTo("good_id", id);
-     // 查询所有数据
-     query.find({
-       success: function (results) {
-         var redu = results.length;
-         wx.setStorageSync('redu', redu);
-         var currentUser = Bmob.User.current();
-         var id = currentUser.id;
-         // 循环处理查询到的数据
-         for (var i = 0; i < results.length; i++) {
-           var object = results[i];
-           if (object.get('parsent_id') == id)
-           {
-             state1 = 'true'
-           } else{ state1 ='false'}
-         }
-         if(state1 =='true')
-         {
-           that.setData({
-             dz:'show',
-             mdz:'none',
-             redu: results.length
+     setInterval(function(){
+       var Diary = Bmob.Object.extend("dianzan");
+       var query = new Bmob.Query(Diary);
+       var state1 = '';
+       query.equalTo("good_id", id);
+       // 查询所有数据
+       query.find({
+         success: function (results) {
+           var redu = results.length;
+           wx.setStorageSync('redu', redu);
+           var currentUser = Bmob.User.current();
+           var id = currentUser.id;
+           // 循环处理查询到的数据
+           for (var i = 0; i < results.length; i++) {
+             var object = results[i];
+             if (object.get('parsent_id') == id) {
+               state1 = 'true'
+             } else { state1 = 'false' }
+           }
+           if (state1 == 'true') {
+             that.setData({
+               dz: 'show',
+               mdz: 'none',
              })
-         }
-       },
-     });
+           }
+         },
+       });
 
-     var Diary = Bmob.Object.extend("recommend");
-     var query = new Bmob.Query(Diary);
-     var redu = wx.getStorageSync('redu')
-     query.get(id, {
-       success: function (result) {
-         result.set('redu', redu);
-         result.save();
-       },
-     });
+       var Diary = Bmob.Object.extend("recommend");
+       var query = new Bmob.Query(Diary);
+       var redu = wx.getStorageSync('redu')
+       query.get(id, {
+         success: function (result) {
+           result.set('redu', redu);
+           result.save();
+         },
+       });
 
-     var Diary1 = Bmob.Object.extend("goods");
-     var query = new Bmob.Query(Diary1);
-     query.get(id, {
-       success: function (result) {
-         result.set('redu', redu);
-         result.save();
-       },
-     });
+       var Diary1 = Bmob.Object.extend("goods");
+       var query = new Bmob.Query(Diary1);
+       query.get(id, {
+         success: function (result) {
+           result.set('redu', redu);
+           result.save();
+         },
+       });
+     },1000)
   },
 
   /**
@@ -124,6 +123,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    setInterval(function(){
+      var redu = wx.getStorageSync('redu');
+      console.log(redu)
+      that.setData({
+        redu: redu
+      })
+    },1000)
     //选中地址后显示出来
     var secAddr = wx.getStorageSync('selectedaddr');
     var result = secAddr.split(',');
