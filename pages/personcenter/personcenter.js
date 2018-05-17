@@ -8,7 +8,6 @@ Page({
     display:'none',
   },
   onLoad: function () {
-    wx.setStorageSync('userdata', '')
     var that = this
     // 新建百度地图对象 
     var BMap = new bmap.BMapWX({
@@ -67,14 +66,43 @@ Page({
             display: 'none'
           })
         }
-      },1000)
-    },1000)
+      },500)
+    },500)
   },
 
 // Do something when show.
   onShow: function (options) {
     //查询lover表和_User表,进行对比
-   
+    setTimeout(function () {
+      var currentUser = Bmob.User.current();
+      var id = currentUser.id;
+      var Diary = Bmob.Object.extend("User_infor");
+      var query = new Bmob.Query(Diary);
+      query.equalTo("parsent_id", id);
+      // 查询所有数据
+      query.find({
+        success: function (results) {
+          console.log("共查询到 " + results.length + " 条记录");
+          if (results.length == 0) {
+            var userdata = wx.getStorageSync('userdata');
+            var nickname = userdata.nickName;
+            console.log(userdata)
+            var Post = Bmob.Object.extend("_User");
+            var Comment = Bmob.Object.extend("User_infor");
+            var myComment = new Comment();
+            var post = new Post();
+            post.id = id;
+            myComment.set("parsent", post);
+            myComment.set("parsent_id", id);
+            myComment.set('nickname', nickname);
+            myComment.save();
+          }
+          else {
+            return
+          }
+        },
+      });
+    }, 5000)
   },
 
   contact_us:function()
