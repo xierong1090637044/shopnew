@@ -340,6 +340,7 @@ Page({
   //选取袜子颜色功能
   radioChange: function (e) {
     var radioCheckVal = e.detail.value
+    console.log(radioCheckVal)
     this.setData({
       radioCheckVal: radioCheckVal
     })

@@ -86,6 +86,7 @@ Page({
           if (results.length == 0) {
             var userdata = wx.getStorageSync('userdata');
             var nickname = userdata.nickName;
+            var avatar = userdata.avatarUrl;
             console.log(userdata)
             var Post = Bmob.Object.extend("_User");
             var Comment = Bmob.Object.extend("User_infor");
@@ -95,6 +96,7 @@ Page({
             myComment.set("parsent", post);
             myComment.set("parsent_id", id);
             myComment.set('nickname', nickname);
+            myComment.set('avatar', avatar);
             myComment.save();
           }
           else {
