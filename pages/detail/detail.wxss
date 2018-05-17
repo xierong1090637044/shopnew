@@ -3,7 +3,7 @@
 .swiper
 {
   width: 100%;
-  height: 245px;
+  height: 350px;
 }
 .main
 {
@@ -21,6 +21,7 @@
 .bannerimg
 {
   width: 100%;
+  height: 100%;
 }
 .float
 {

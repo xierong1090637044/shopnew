@@ -7,7 +7,8 @@
     "pages/choseaddress/choseaddress",
     "pages/addaddress/addaddress",
     "pages/about_us/about_us",
-    "pages/contact_us/contact_us"
+    "pages/contact_us/contact_us",
+    "pages/all_goods/all_goods"
   ],
   "window": {
     "enablePullDownRefresh": true
@@ -31,6 +32,12 @@
         "iconPath": "images/shopcar.png",
         "selectedIconPath": "images/shopcar1.png",
         "text": "购物车"
+      },
+      {
+        "pagePath": "pages/all_goods/all_goods",
+        "iconPath": "images/goods.png",
+        "selectedIconPath": "images/goods1.png",
+        "text": "全部商品"
       }
     ]
   },
