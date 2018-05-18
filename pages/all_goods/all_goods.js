@@ -7,6 +7,8 @@ Page({
     wazi:'',
     leftstyle:'',
     input:'',
+    display:'block',
+    img_display:'none'
   },
 
   /**
@@ -24,6 +26,7 @@ Page({
    query.find({
      success: function (results) {
        console.log(results)
+       wx.setStorageSync('wazi-length', results.length)
        that.setData({
          wazi:results
        })
@@ -76,9 +79,9 @@ Page({
     // 查询所有数据
     query.find({
       success: function (results) {
-        that.setData({
-          wazi: results
-        })
+          that.setData({
+            wazi: results
+          })
       },
     });
 
@@ -89,21 +92,26 @@ Page({
     query.find({
       success: function (results) {
         var arr = []
-        for (var i = 0; i < that.data.wazi.length;i++)
+        if (that.data.wazi.length==0)
         {
-          arr[i] = that.data.wazi[i]
-          if (i == (that.data.wazi.length-1) )
-          {
-            for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++)
-            {
-              var y =  x - (that.data.wazi.length)
-              arr[x] = results[y]
+          that.setData({
+            wazi: results
+          })
+        }else
+        {
+          for (var i = 0; i < that.data.wazi.length; i++) {
+            arr[i] = that.data.wazi[i]
+            if (i == (that.data.wazi.length - 1)) {
+              for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++) {
+                var y = x - (that.data.wazi.length)
+                arr[x] = results[y]
+              }
             }
           }
+          that.setData({
+            wazi: arr
+          })
         }
-        that.setData({
-          wazi:arr
-        })
       },
     });
 
@@ -114,18 +122,24 @@ Page({
     query.find({
       success: function (results) {
         var arr = []
-        for (var i = 0; i < that.data.wazi.length; i++) {
-          arr[i] = that.data.wazi[i]
-          if (i == (that.data.wazi.length - 1)) {
-            for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++) {
-              var y = x - (that.data.wazi.length)
-              arr[x] = results[y]
+        if (that.data.wazi.length == 0) {
+          that.setData({
+            wazi: results
+          })
+        } else {
+          for (var i = 0; i < that.data.wazi.length; i++) {
+            arr[i] = that.data.wazi[i]
+            if (i == (that.data.wazi.length - 1)) {
+              for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++) {
+                var y = x - (that.data.wazi.length)
+                arr[x] = results[y]
+              }
             }
           }
+          that.setData({
+            wazi: arr
+          })
         }
-        that.setData({
-          wazi: arr
-        })
       },
     });
 
@@ -136,20 +150,34 @@ Page({
     query.find({
       success: function (results) {
         var arr = []
-        for (var i = 0; i < that.data.wazi.length; i++) {
-          arr[i] = that.data.wazi[i]
-          if (i == (that.data.wazi.length - 1)) {
-            for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++) {
-              var y = x - (that.data.wazi.length)
-              arr[x] = results[y]
+        if (that.data.wazi.length == 0) {
+          that.setData({
+            wazi: results
+          })
+        } else {
+          for (var i = 0; i < that.data.wazi.length; i++) {
+            arr[i] = that.data.wazi[i]
+            if (i == (that.data.wazi.length - 1)) {
+              for (var x = (that.data.wazi.length); x < (results.length + that.data.wazi.length); x++) {
+                var y = x - (that.data.wazi.length)
+                arr[x] = results[y]
+              }
             }
           }
+          that.setData({
+            wazi: arr
+          })
         }
-        that.setData({
-          wazi: arr
-        })
       },
-    });
+    }); 
+    var length = wx.getStorageSync('wazi-length')
+    if (that.data.wazi.length == 0 || that.data.wazi.length ==length)
+      {
+        that.setData({
+          display:'none',
+          img_display:'block'
+        })
+      }
   },
 
   getGoods: function(e)

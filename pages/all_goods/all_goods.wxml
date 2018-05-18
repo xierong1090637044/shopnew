@@ -1,10 +1,10 @@
 <!--上边的搜索-->
 <view style='float:left;width:100%;text-align:center;margin-top:5px;'>
-<input class='header' placeholder='搜素' placeholder-style ='color:#006633;font-size:15px' class='input' bindinput='input'></input>
+<input class='header' placeholder='搜索' placeholder-style ='color:#006633;font-size:15px' class='input' bindinput='input'></input>
 <image src='/images/suosou.png' class='suosou' bindtap='suosou'></image>
 <!--左边的选择元素-->
 </view>
-<view class='left_select' >
+<view class='left_select'  style='display:{{display}}'>
   <view wx:for='{{array}}' wx:if="{{item ==leftstyle}}" wx:key='' class='item2' bindtap='getGoods' data-type='{{item}}'>
      {{item}}
   </view>
@@ -14,7 +14,7 @@
 </view>
 
 <!--右边的商品元素-->
-<view class='right-goods'>
+<view class='right-goods' style='display:{{display}}'>
   <view wx:for='{{wazi}}' class='good' wx:key=''>
   <navigator url="/pages/detail/detail?title={{item.objectId}}">
    <view class='name'>{{item.type}}</view>
@@ -23,4 +23,9 @@
    <view class='redu'>热度：{{item.redu}}</view>
    </navigator>
   </view>
+</view>
+
+<view style='display:{{img_display}};' class='hiddenimg'>
+   <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/18/6f09027f400904528031b85cda39516a.png'></image>
+   <text class='hiddentext'>没有找到相对应的商品</text>
 </view>
