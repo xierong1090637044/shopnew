@@ -31,8 +31,8 @@
 </view>
 <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/4be7de6f4085d1f48005901696530ea5.PNG' class='recimg'></image>
 <view class='rec-pdu' wx:for='{{recimages}}' wx:key="{{index}}">
-<navigator url="/pages/detail/detail?title={{item.name}}">
-  <image src='{{item.images.url}}' class='rec-pdu-img'></image>
+<navigator url="/pages/detail/detail?title={{item.objectId}}">
+  <image src='{{item.images}}' class='rec-pdu-img'></image>
   </navigator>
   <view class='rec-text'>
       <view class="jiage">价格</view>
@@ -88,7 +88,7 @@
 </view>
 </form>
 
-<view class='image3' style='display:{{display}}'><image src='{{payContent.images.url}}' class='image4'></image></view>
+<view class='image3' style='display:{{display}}'><image src='{{payContent.images}}' class='image4'></image></view>
 
 <view class='notify' style='display:{{display}}'>
   <view>选好了，请点击发送通知</view>
@@ -135,7 +135,7 @@
 </view>
 </form>
 
-<view class='image3' style='display:{{shoucang}}'><image src='{{payContent.images.url}}' class='image4'></image></view>
+<view class='image3' style='display:{{shoucang}}'><image src='{{payContent.images}}' class='image4'></image></view>
 
 <view class='notify' style='display:{{shoucang}}'>
   <view>选好了，请点击发送通知</view>

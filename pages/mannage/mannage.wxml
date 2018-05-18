@@ -1,0 +1,5 @@
+<!--pages/mannage/mannage.wxml-->
+<view>
+   <view bindtap='modify_rec' data-id='modify_rec'>修改推荐商品</view>
+   <view>商品信息修改</view>
+</view>

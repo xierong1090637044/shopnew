@@ -1,14 +1,16 @@
 {
   "pages": [
+    "pages/personcenter/personcenter",
     "pages/all_goods/all_goods",
     "pages/test/test",
-    "pages/personcenter/personcenter",
     "pages/order_car/order_car",
     "pages/detail/detail",
     "pages/choseaddress/choseaddress",
     "pages/addaddress/addaddress",
     "pages/about_us/about_us",
-    "pages/contact_us/contact_us"
+    "pages/contact_us/contact_us",
+    "pages/mannage/mannage",
+    "pages/mannage/product/product"
   ],
   "window": {
     "enablePullDownRefresh": true

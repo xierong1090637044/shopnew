@@ -42,7 +42,7 @@ Page({
 
          that.setData({
            payContent:result,
-           bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
+           bannerImgs: [bannerImg1, bannerImg2, bannerImg3]
          })
        },
      });

@@ -1,0 +1,111 @@
+.input
+{
+  width: 50%;
+  height: 28px;
+  margin: 0 auto;
+  border:1px solid #006633;
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
+}
+.suosou
+{
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+.left_select
+{
+  float: left;
+  width: 100%;
+  margin-top: 5px;
+  border:1px solid #efefef;
+  font-size: 15px;
+}
+.item1
+{
+  width: 17%;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 6vh;
+  background: #efefef;
+  color: #333;
+  margin-bottom: 5px;
+}
+.item2
+{
+  width: 17%;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 6vh;
+  background: #006633;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.right-goods
+{
+  margin: 5px;
+  float: left;
+  width: 97%;
+  border: 1px solid #006633;
+}
+.good
+{
+  float: left;
+  height: 20vh;
+  width: 100%;
+  padding: 1px;
+  margin: 5px;
+  border: 1px solid#efefef;
+}
+.goodimg
+{
+  width: 100%;
+  height: 16vh;
+}
+.name
+{
+  font-size: 13px;
+  padding: 2px;
+  border-bottom: 1px solid#efefef;
+  color: #993333;
+  text-align: center;
+}
+.price
+{
+  font-size: 15px;
+  width: 40%;
+  display: inline-block;
+}
+.redu
+{
+  font-size: 15px;
+  width: 60%;
+  display: inline-block;
+  text-align: right;
+}
+.hiddenimg
+{
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 20%;
+}
+.hiddentext
+{
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.option
+{
+  float: right;
+  width: 30%;
+  font-size: 15px;
+  margin-right: 40px;
+  margin-top:6px;
+}

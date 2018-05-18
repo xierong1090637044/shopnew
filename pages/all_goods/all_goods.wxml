@@ -18,7 +18,7 @@
   <view wx:for='{{wazi}}' class='good' wx:key=''>
   <navigator url="/pages/detail/detail?title={{item.objectId}}">
    <view class='name'>{{item.type}}</view>
-   <image src='{{item.images.url}}' class='goodimg'></image>
+   <image src='{{item.images}}' class='goodimg'></image>
    <view class='price'>￥{{item.price}}</view>
    <view class='redu'>热度：{{item.redu}}</view>
    </navigator>

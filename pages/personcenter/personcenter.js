@@ -104,6 +104,12 @@ Page({
     })
   },
 
+  houtai: function () {
+    wx.navigateTo({
+      url: '../../pages/mannage/mannage',
+    })
+  },
+
   refuse:function()
   {
     wx.setStorageSync('userdata', 'none')

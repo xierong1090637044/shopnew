@@ -93,7 +93,7 @@ src='http://bmob-cdn-18174.b0.upaiyun.com/2018/05/04/6274aa3440885841806d243d327
 </view>
 </form>
 
-<view class='image3' style='display:{{display}}'><image src='{{payContent.images.url}}' class='image4'></image></view>
+<view class='image3' style='display:{{display}}'><image src='{{payContent.images}}' class='image4'></image></view>
 
 <view class='notify' style='display:{{display}}'>
   <view>选好了，请点击发送通知</view>

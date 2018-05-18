@@ -1,0 +1,23 @@
+
+<!--左边的选择元素-->
+<view class='left_select'  style='display:{{display}}'>
+  <view wx:for='{{array}}' wx:if="{{item ==leftstyle}}" wx:key='' class='item2' bindtap='getGoods' data-type='{{item}}'>
+     {{item}}
+  </view>
+   <view wx:for='{{array}}' wx:elseif="{{item !=leftstyle}}" wx:key='' class="{{item==leftstyle?'item2':'item1'}}" bindtap='getGoods' data-type='{{item}}'>
+     {{item}}
+  </view>
+</view>
+
+<!--右边的商品元素-->
+<view class='right-goods' style='display:{{display}}'>
+  <view wx:for='{{wazi}}' class='good' wx:key=''>
+   <view class='name'>类型：{{item.type}} 单价：￥{{item.price}}</view>
+   <navigator url="/pages/detail/detail?title={{item.objectId}}" style='width:26%;float:left;'>
+   <image src='{{item.images}}' class='goodimg'></image>
+   </navigator>
+   <view class='option' data-object='{{item.objectId}}' bindtap='set_rec'>
+   <button style='font-size:12px' >设为推荐商品</button>
+   </view>
+  </view>
+</view>

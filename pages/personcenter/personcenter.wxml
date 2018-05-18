@@ -9,6 +9,7 @@
         <view class='list'>
         <view bindtap='contact_us' class='contact_us'>联系我们</view>
         <view bindtap='about_us' class='about_us'>关于我们</view>
+        <view bindtap='houtai' class='about_us' style='display:{{houtai}}'>后台管理</view>
         </view>
     </view>  
 </view>

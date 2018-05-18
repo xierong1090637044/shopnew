@@ -48,6 +48,7 @@
   width: 100%;
   margin-top: 15vh;
   text-align: center;
+  font-size: 15px;
 }
 .contact_us
 {

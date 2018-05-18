@@ -43,9 +43,6 @@ Page({
     var ids;
     query.find({
       success: function (results) {
-        for (var i = 0; i < results.length; i++) {
-          var object = results[i];
-        }
         console.log(results),
           that.setData({
             recimages: results,
@@ -123,7 +120,7 @@ Page({
         var price = result.get("price")
         var image = result.get("images")
         wx.setStorageSync('type', result)
-        wx.setStorageSync('image', image.url)
+        wx.setStorageSync('image', image)
         that.setData({
           payContent: result,
           payfor: price
