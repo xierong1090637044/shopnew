@@ -192,13 +192,14 @@ margin-left: 4%;
   margin-right: 10px;
   margin-left: 4%;
 }
-.yangshi4{  
-  width: 20%;
+.yangshi4{
+  width: 23%;
   margin-right: 8%;
   display: inline-block;
   text-align: center;
   background:#efefef;
-  border-radius: 35px;
+  border-radius: 4px;
+  padding-bottom: 5px;
 }  
 
 .yangshi1 label.active{

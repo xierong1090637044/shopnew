@@ -62,6 +62,70 @@ Page({
        },
      });
 
+     var Diary2 = Bmob.Object.extend("wazi");
+     var query = new Bmob.Query(Diary2);
+     query.get(options.title, {
+       success: function (result) {
+         console.log(result)
+         var bannerImg1 = result.get("bannerImg1");
+         var bannerImg2 = result.get("bannerImg2");
+         var bannerImg3 = result.get("bannerImg3");
+
+         that.setData({
+           payContent: result,
+           bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
+         })
+       },
+     });
+
+     var Diary3 = Bmob.Object.extend("xiezi");
+     var query = new Bmob.Query(Diary3);
+     query.get(options.title, {
+       success: function (result) {
+         console.log(result)
+         var bannerImg1 = result.get("bannerImg1");
+         var bannerImg2 = result.get("bannerImg2");
+         var bannerImg3 = result.get("bannerImg3");
+
+         that.setData({
+           payContent: result,
+           bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
+         })
+       },
+     });
+
+     var Diary4 = Bmob.Object.extend("xiangbao");
+     var query = new Bmob.Query(Diary4);
+     query.get(options.title, {
+       success: function (result) {
+         console.log(result)
+         var bannerImg1 = result.get("bannerImg1");
+         var bannerImg2 = result.get("bannerImg2");
+         var bannerImg3 = result.get("bannerImg3");
+
+         that.setData({
+           payContent: result,
+           bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
+         })
+       },
+     });
+
+     var Diary5 = Bmob.Object.extend("yifu");
+     var query = new Bmob.Query(Diary5);
+     query.get(options.title, {
+       success: function (result) {
+         console.log(result)
+         var bannerImg1 = result.get("bannerImg1");
+         var bannerImg2 = result.get("bannerImg2");
+         var bannerImg3 = result.get("bannerImg3");
+
+         that.setData({
+           payContent: result,
+           bannerImgs: [bannerImg1.url, bannerImg2.url, bannerImg3.url]
+         })
+       },
+     });
+
      //查询点赞状态
      setInterval(function(){
        var Diary = Bmob.Object.extend("dianzan");
@@ -109,6 +173,12 @@ Page({
            result.save();
          },
        });
+
+       var redu = wx.getStorageSync('redu');
+       console.log(redu)
+       that.setData({
+         redu: redu
+       })
      },1000)
   },
 
@@ -123,13 +193,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    setInterval(function(){
-      var redu = wx.getStorageSync('redu');
-      console.log(redu)
-      that.setData({
-        redu: redu
-      })
-    },1000)
     //选中地址后显示出来
     var secAddr = wx.getStorageSync('selectedaddr');
     var result = secAddr.split(',');
@@ -271,6 +334,62 @@ Page({
     });
     var Diary = Bmob.Object.extend("goods");
     var query = new Bmob.Query(Diary);
+    query.get(id, {
+      success: function (result) {
+        console.log(result)
+        var price = result.get("price")
+        wx.setStorageSync('type', result)
+        that.setData({
+          payContent: result,
+          payfor: price
+        })
+      },
+    });
+
+    var Diary1 = Bmob.Object.extend("wazi");
+    var query = new Bmob.Query(Diary1);
+    query.get(id, {
+      success: function (result) {
+        console.log(result)
+        var price = result.get("price")
+        wx.setStorageSync('type', result)
+        that.setData({
+          payContent: result,
+          payfor: price
+        })
+      },
+    });
+
+    var Diary2 = Bmob.Object.extend("xiezi");
+    var query = new Bmob.Query(Diary2);
+    query.get(id, {
+      success: function (result) {
+        console.log(result)
+        var price = result.get("price")
+        wx.setStorageSync('type', result)
+        that.setData({
+          payContent: result,
+          payfor: price
+        })
+      },
+    });
+
+    var Diary3 = Bmob.Object.extend("xiangbao");
+    var query = new Bmob.Query(Diary3);
+    query.get(id, {
+      success: function (result) {
+        console.log(result)
+        var price = result.get("price")
+        wx.setStorageSync('type', result)
+        that.setData({
+          payContent: result,
+          payfor: price
+        })
+      },
+    });
+
+    var Diary4 = Bmob.Object.extend("yifu");
+    var query = new Bmob.Query(Diary4);
     query.get(id, {
       success: function (result) {
         console.log(result)

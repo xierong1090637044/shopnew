@@ -7,6 +7,7 @@
    </swiper-item>
 </view>
 </swiper>
+
 <view wx:for ="{{length}}" wx:key="">
 <image class = 'image1' src='http://bmob-cdn-18174.b0.upaiyun.com/2018/04/26/e161b05a4096335e806db1b34d643f43.png'></image>
 </view>

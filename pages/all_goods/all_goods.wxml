@@ -1,2 +1,26 @@
-<!--pages/all_goods/all_goods.wxml-->
-<text>pages/all_goods/all_goods.wxml</text>
+<!--上边的搜索-->
+<view style='float:left;width:100%;text-align:center;margin-top:5px;'>
+<input class='header' placeholder='搜素' placeholder-style ='color:#006633;font-size:15px' class='input' bindinput='input'></input>
+<image src='/images/suosou.png' class='suosou' bindtap='suosou'></image>
+<!--左边的选择元素-->
+</view>
+<view class='left_select' >
+  <view wx:for='{{array}}' wx:if="{{item ==leftstyle}}" wx:key='' class='item2' bindtap='getGoods' data-type='{{item}}'>
+     {{item}}
+  </view>
+   <view wx:for='{{array}}' wx:elseif="{{item !=leftstyle}}" wx:key='' class="{{item==leftstyle?'item2':'item1'}}" bindtap='getGoods' data-type='{{item}}'>
+     {{item}}
+  </view>
+</view>
+
+<!--右边的商品元素-->
+<view class='right-goods'>
+  <view wx:for='{{wazi}}' class='good' wx:key=''>
+  <navigator url="/pages/detail/detail?title={{item.objectId}}">
+   <view class='name'>{{item.type}}</view>
+   <image src='{{item.images.url}}' class='goodimg'></image>
+   <view class='price'>￥{{item.price}}</view>
+   <view class='redu'>热度：{{item.redu}}</view>
+   </navigator>
+  </view>
+</view>

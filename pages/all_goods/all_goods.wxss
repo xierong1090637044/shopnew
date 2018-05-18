@@ -1,1 +1,85 @@
 /* pages/all_goods/all_goods.wxss */
+.input
+{
+  width: 50%;
+  height: 28px;
+  margin: 0 auto;
+  border:1px solid #006633;
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
+}
+.suosou
+{
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+.left_select
+{
+  float: left;
+  width: 20%;
+  height: 91vh;
+  margin-right: 5px;
+  margin-top: 5px;
+  border:1px solid #fff;
+}
+.item1
+{
+  text-align: center;
+  line-height: 8vh;
+  background: #efefef;
+  color: #333;
+  margin-bottom: 5px;
+}
+.item2
+{
+  text-align: center;
+  line-height: 8vh;
+  background: #006633;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.right-goods
+{
+  margin-top: 5px;
+  float: left;
+  width: 77%;
+  border: 1px solid #006633;
+}
+.good
+{
+  float: left;
+  height: 100%;
+  width: 45%;
+  padding: 1px;
+  margin: 5px;
+  border: 1px solid#efefef;
+}
+.goodimg
+{
+  width: 100%;
+  height: 26vh;
+}
+.name
+{
+  font-size: 15px;
+  padding: 2px;
+  border-bottom: 1px solid#efefef;
+  color: #993333;
+  text-align: center;
+}
+.price
+{
+  font-size: 15px;
+  width: 40%;
+  display: inline-block;
+}
+.redu
+{
+  font-size: 15px;
+  width: 60%;
+  display: inline-block;
+  text-align: right;
+}
