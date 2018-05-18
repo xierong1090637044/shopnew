@@ -344,5 +344,11 @@ Page({
     this.setData({
       radioCheckVal: radioCheckVal
     })
+  },
+
+  goto_allgoods:function(){
+    wx.switchTab({
+      url: '/pages/all_goods/all_goods'
+    })
   }
 })

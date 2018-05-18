@@ -8,7 +8,7 @@ Page({
     display:'none',
   },
   onLoad: function () {
-    var that = this
+    var that = this;
     // 新建百度地图对象 
     var BMap = new bmap.BMapWX({
       ak: 'jyr2sMczbQ4wFZVRfWjBv68EHkqpfAnE'
@@ -67,7 +67,7 @@ Page({
           })
         }
       },500)
-    },500)
+    },1000)
   },
 
 // Do something when show.
