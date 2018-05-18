@@ -5,7 +5,6 @@
                     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
                     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
                 </view>
-              <view class="weather"> <text>{{weatherData}}</text> </view> 
         </view>
         <view class='list'>
         <view bindtap='contact_us' class='contact_us'>联系我们</view>

@@ -9,26 +9,7 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    // 新建百度地图对象 
-    var BMap = new bmap.BMapWX({
-      ak: 'jyr2sMczbQ4wFZVRfWjBv68EHkqpfAnE'
-    });
-    var fail = function (data) {
-      console.log(data)
-    };
-    var success = function (data) {
-      var weatherData = data.currentWeather[0];
-      weatherData = '城市：' + weatherData.currentCity + '\n' + '日期：' + weatherData.date + '\n' + '温度：' + weatherData.temperature + '\n' + '天气：' + weatherData.weatherDesc + '\n' + '风力：' + weatherData.wind + '\n';
-      that.setData({
-        weatherData: weatherData,
-      });
-    }
-    // 发起weather请求 
-    BMap.weather({
-      fail: fail,
-      success: success
-    }); 
-    
+    wx.setStorageSync('userdata', '');
     //调用应用实例的方法获取全局数据
    /* app.getUserInfo(function (userInfo) {
       //更新数据
@@ -63,7 +44,8 @@ Page({
         }
         else {
           that.setData({
-            display: 'none'
+            display: 'none',
+            userInfo: userdata
           })
         }
       },500)
@@ -72,6 +54,7 @@ Page({
 
 // Do something when show.
   onShow: function (options) {
+    var that = this;
     //查询lover表和_User表,进行对比
     setTimeout(function () {
       var currentUser = Bmob.User.current();
@@ -85,7 +68,7 @@ Page({
           console.log("共查询到 " + results.length + " 条记录");
           if (results.length == 0) {
             var userdata = wx.getStorageSync('userdata');
-            var nickname = userdata.nickName;
+            var nickName = userdata.nickName;
             var avatar = userdata.avatarUrl;
             console.log(userdata)
             var Post = Bmob.Object.extend("_User");
@@ -95,8 +78,8 @@ Page({
             post.id = id;
             myComment.set("parsent", post);
             myComment.set("parsent_id", id);
-            myComment.set('nickname', nickname);
-            myComment.set('avatar', avatar);
+            myComment.set('nickName', nickName);
+            myComment.set('avatarUrl', avatar);
             myComment.save();
           }
           else {
