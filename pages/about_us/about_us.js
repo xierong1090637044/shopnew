@@ -14,20 +14,7 @@ Page({
   },
   /*** 生命周期函数--监听页面初次渲染完成*/
   onReady: function () {
-    this.mapCtx = wx.createMapContext('myMap');
-    //获取位置
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        console.log(res.longitude)
-        console.log(res.latitude)
-      }
-    })
-    //移动位置
-    this.mapCtx.moveToLocation();
-    this.mapCtx.getScale({
-      success: function(res) {
-      }
-    });
+
   },
 
   /**
